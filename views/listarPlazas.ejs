@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Plazas de Garaje</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="container justify-content-center">
+    
+    <div class="container">
+    <h2>Planta 1</h2>
+    <div class="row" id="plazasContainer">
+        <% plazas.slice(0, 10).forEach(function(plaza, index) { %>
+            <div class="col-2 m-1">
+                <div class="card <%= plaza.estado === 'L' ? 'bg-success' : 'bg-danger' %>">
+                    <div class="card-body">
+                        <p class="card-text"><strong>Número:</strong> <%= plaza.idPlaza %></p>
+                        <p class="card-text estado" id="estado<%= index %>"><strong>Estado:</strong> <%= plaza.estado %></p>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+    <h2 class="mt-3">Planta 2</h2>
+    <div class="row" id="plazasContainer2">
+        <% plazas.slice(10, 20).forEach(function(plaza, index) { %>
+            <div class="col-2 m-1">
+                <div class="card <%= plaza.estado === 'L' ? 'bg-success' : 'bg-danger' %>">
+                    <div class="card-body">
+                        <p class="card-text"><strong>Número:</strong> <%= plaza.idPlaza %></p>
+                        <p class="card-text estado" id="estado<%= index %>"><strong>Estado:</strong> <%= plaza.estado %></p>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    </div>
+
+    <div class="mt-3 m-2">
+
+    <button id="botonEntrada" onclick="entrada()" class="btn btn-primary" style="width: 100px;">Entrada</button>
+    <button id="botonSalida" onclick="salida()" class="btn btn-danger" style="width: 100px;">Salida</button>
+
+    <button id="botonReset" onclick="reset()" class="btn border" style="width: 100px;">Reiniciar</button>
+
+
+  <label class="switch ml-5">
+    <input type="checkbox" id="interruptorDemo" onclick="toggleSimulacion()">
+    <span class="slider round"></span>
+  </label>
+  <label for="interruptorDemo">Simulación</label>
+
+    </div>
+
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+</html>
