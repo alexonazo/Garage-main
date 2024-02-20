@@ -12,15 +12,15 @@ To run this application, you need to have the following installed:
 1. Clone the repository:
     ```bash
     git clone https://github.com/alexonazo/Garage.git
-    ```
-2. Install the dependencies:
+2. Import  the SQL file located in `db` folder into your local MySQL database.
+3. Install the dependencies:
     ```bash
     cd garage-app
     npm install
     ```
-3. Create a new MySQL database named `garage` and a user with privileges to access it and import db/garage.sql.
-4. Update the `app.js` file with your MySQL credentials.
-5. Start the application:
+4. Create a new MySQL database named `garage` and a user with privileges to access it and import db/garage.sql.
+5. Update the `app.js` file with your MySQL credentials.
+6. Start the application:
     ```bash
     node app.js
     ```
