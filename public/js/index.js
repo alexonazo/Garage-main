@@ -152,8 +152,8 @@ error: function(error) {
 }
 
 cargarPlazas();
-setInterval(cargarPlazas, 3000);
-setInterval(openPopup, 3000); 
+setInterval(cargarPlazas, 1000);
+setInterval(openPopup, 1000); 
 
 let intervaloEntrada, intervaloSalida;
 

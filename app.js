@@ -62,6 +62,9 @@ app.post('/entrada', async function (req, res) {
 
     const idCochesA = resultsCompra.map(result => result.idCoche);
     const idPlazasA = resultsCompra.map(result => result.idPlaza);
+    if (idCochesA.length == 20) {
+        return res.status(500).send('Error al realizar la inserción');
+    }
 
     //Genera un numero aleatorio excluyendo los numeros del array, pudiendo definir un intervalo para ese numero
         function generarNumeroAleatorioExcluido(arrays, min, max) {
@@ -99,8 +102,8 @@ app.post('/entrada', async function (req, res) {
 });
 
 app.post('/salida', async function(req, res) {
+   
     try {
-
         //Se busca en la tabla compra un coche aparcado
 
         const queryCoche = `SELECT * FROM compra WHERE fechaFin IS NULL`;
@@ -162,6 +165,7 @@ app.get('/detalleCompra', function(req, res) {
 });
 
 app.get('/reset', async function(req, res) {
+    
     try {
 
         //Resetea tabla compra y libera todas las plazas
